@@ -2,22 +2,22 @@
 -- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Sep 07, 2020 at 12:46 AM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Хост: localhost:8889
+-- Время создания: Сен 08 2020 г., 11:20
+-- Версия сервера: 5.7.26
+-- Версия PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `calc`
+-- База данных: `catalog`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `goods`
+-- Структура таблицы `goods`
 --
 
 CREATE TABLE `goods` (
@@ -27,34 +27,35 @@ CREATE TABLE `goods` (
   `price` int(11) NOT NULL,
   `src` varchar(255) NOT NULL,
   `small_src` varchar(255) NOT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '1'
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `articul` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `goods`
+-- Дамп данных таблицы `goods`
 --
 
-INSERT INTO `goods` (`id`, `name`, `description`, `price`, `src`, `small_src`, `is_active`) VALUES
-(1, 'Ноутбук Lenovo IdeaPad 110-15IBR (80T700С2RK)', 'Устройство справится с любыми профессиональными, бытовыми и учебными задачами, включая просмотр качественного видео и работу с офисными приложениями. Оно снабжено современным процессором Intel и оперативной памятью с большим объёмом.', 18990, 'uploads/7.jpg', 'uploads/mini/7.jpg', 1),
-(2, 'Ноутбук HP 15-bs516ur 2GF21EA', 'Встроенный адаптер Wi-Fi a/c поддерживает такую же высокую скорость передачи данных, как линия Ethernet. При этом он сохраняет устойчивое соединение с роутером на большом расстоянии. Кроме того, ноутбук снабжён всем необходимым для подключения периферийного оборудования, включая порты USB и HDMI, а также передатчик Bluetooth.', 22500, 'uploads/5a48e1b05e92bbc5a50a809e516e1edf.jpg', 'uploads/mini/5a48e1b05e92bbc5a50a809e516e1edf.jpg', 1),
-(16, 'Тест', 'тест', 11111, 'uploads/64270.jpg', 'uploads/mini/64270.jpg', 1);
+INSERT INTO `goods` (`id`, `name`, `description`, `price`, `src`, `small_src`, `is_active`, `articul`) VALUES
+(1, 'HD комплект видеонаблюдения SuperView', 'Универсальная система видеонаблюдения SuperView создана для контроля безопасности помещения и близлежащей территории. Благодаря специальным креплениям HD комплект видеонаблюдения SuperView легко монтируется на стены или потолок помещения. Система морозоустойчива и выдерживает перепады температуры. Гидроизоляция камер не помешает записи при дожде и снеге. Обратите внимание: данный комплект не подходит для скрытой установки.\r\n', 7890, 'img/img-1.jpg', 'img/small/img_small-1.png', 1, '11131324'),
+(2, 'HD комплект видеонаблюдения View2', 'Для защиты помещения от внештатных ситуация подойдет Система видеонаблюдения View2. Защита от пыли и высокая чувствительность делают ее незаменимым помощником на производстве. Вы сможете рассмотреть детали видео благодаря пятикратному зуму и автоматическому балансу белого.\r\nВ комплектацию устройства входит пульт для дистанционного управления системой.', 6990, 'img/img-2.jpg', 'img/img-2.jpg', 1, '64583478'),
+(3, 'Samsung Galaxy S4', 'Детальное описание товара.\r\nВ основном, описание товара представляет собой небольшой текстовый блок. Фактически цель данного текста - привлечь внимание потенциального покупателя и стимулировать его к совершению покупки.\r\n Вес товара: 500 г\r\n Габариты (ДxШxВ): 757 x 751 x 755 мм', 12000, 'img/img-3.png', 'img/img-3.png', 1, '');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `goods`
+-- Индексы таблицы `goods`
 --
 ALTER TABLE `goods`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `goods`
+-- AUTO_INCREMENT для таблицы `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
